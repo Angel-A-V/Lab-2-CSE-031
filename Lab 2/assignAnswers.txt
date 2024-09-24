@@ -1,0 +1,12 @@
+Individual Assignment 1: Segmentation Faults
+    
+    1. The line that caused the segmentation fault was line 24: scanf("%d", input).
+
+    2. To fix this line, you need to pass the value by its address, like this: scanf("%d", &input). 
+       This is because scanf expects a pointer to store the input value, not the variable itself.
+
+    3. There is also an issue with the average calculation because sum is being passed by value, meaning changes 
+        to sum inside read_values do not reflect in the main function.
+
+    4. To fix this, modify read_values so that sum is passed by reference. This requires using a pointer in 
+       read_values, and then in main, pass sum by reference.

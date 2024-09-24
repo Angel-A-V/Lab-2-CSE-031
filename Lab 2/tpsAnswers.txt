@@ -61,7 +61,7 @@ Tps 2:
 
 Tps 3:
 
-    1. There are 4 varibles that were declared as integers and out of the 4 of them it two are pointer variables.
+    1. There are 4 variables that were declared as integers and out of the 4 of them 2 of them are pointer variables.
 
     2. When i print the values of x, y, and arr[0], i don't expect valid value due to the fact that we have not initialzed any of them.
        As expected the values printed are random trash that is unpredictiable depending on the computer the code is run on.
