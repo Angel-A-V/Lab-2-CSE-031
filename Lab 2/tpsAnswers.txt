@@ -1,13 +1,121 @@
-Angel Vargas
-Jordan Huynh
-Gurkarn Singh
-Roshan Kattil
-
-
-
 Tps 1:
-        
 
+    1.  Angel Vargas
+        Jordan Huynh
+        Gurkarn Singh
+        Roshan Kattil
+        
+    2.  1. https://www.geeksforgeeks.org/gdb-step-by-step-introduction/
+	    2.https://youtu.be/-3toI8L3Oug?si=bS4HcFoKRa9tRxh5
+	    3.https://youtu.be/ny6y0pPO--4?si=KuhzGLEAO4iGZG_p
+    
+    3.  Shared with groupmates via google docs=
+
+    4. Bookmarked on computer
 
 Tps 2:
+
+    1. How do you compile your punishment.c so that you can debug it using GDB (or LLDB for MAC)?
+    Try it with your code and set the name of the executable to punish.
+
+    In order to compile the punishment.c using gdb debugging we run this command "gcc -g punishment.c -o punish" which
+    creates an executable with the -g flag meaning that during compliaion genterate the debugging information.
+
+    2. Once punishment.c is compiled, how do you load it in GDB (or LLDB for MAC)? Try it with your
+    program.
+
+    Once compiled all we have to do to load our code in gdb is call the command "gdb punish", which is just calling the 
+    executable in the gdb program.
+
+    3. Once punish is loaded, how do you run it in GDB (or LLDB for MAC)? Try to run your punish.
+
+    To run the punish file in the gdb program we can either type r or run, which executes the program from start to end.
+
+    4. What are breakpoints? How do you set a breakpoint at a certain line of your program? Try to set a
+    breakpoint in punishment.c where the for loop begins.
+
+    Breakpoints allow you to make the program stop at certain points in which you chose. And to set a breakpoint on 
+    a certain line of your program in punsihment.c we would use the command "b 6" in gdp which adds a break point on line 6.
+
+    5. Now run the program again. It should stop at the breakpoint you set in Q4. From here, how do you run
+    the program line by line? Try to run the next 3 lines with your program.
+
+    If you'd like to run the next line after your breakpoint you'd type in the command "next" while in gdb. In oder to jump 3 lines 
+    I would type the command "jump 9" because I have m breakpoint at line 6.
+
+    6. While you are still running punish line by line, how can you see the value of a variable? Pick 3 variables
+    in your program and display them in the terminal one by one.
+
+    To print the a certain varible using gdb I would call the command "print count" as where count is a variable name I have in my code
+    but your's can be different and you should just memorize "print variable_name". Three variables I picked are count, error and i. 
+
+    7. Now that you are tired of running line by line, how do you let the program finish its run? Try to finish
+    running your punish.
+
+    To let the program finish without having to keep typing next, we can run the command "continue" which should allow yor program to
+    finish unless if you have some required values from user input.
+
+    8. How do you exit from GDB (or LLDB for MAC)?
+
+    Exiting the program in a windows enviorment you can exit gdb using the command "quit" or "q", which lets you exit the program.
+
+Tps 3:
+
+    1. There are 4 varibles that were declared as integers and out of the 4 of them it two are pointer variables.
+
+    2. When i print the values of x, y, and arr[0], i don't expect valid value due to the fact that we have not initialzed any of them.
+       As expected the values printed are random trash that is unpredictiable depending on the computer the code is run on.
+       terminal output: "x = 0
+                         y = 8
+                         arr[0] = 8 "
+
+    3. To fix the current issues with the random outputs of the variable x, y, and the arr[0], we can intialize there values to 0
+       which can be done like this:
+       "int main() {
+            int x = 0 , y = 0, *px, *py;
+            int arr[10];
+
+            for(int i = 0; i < 10; i++){
+                arr[i] = i;
+            }
+
+        printf("x = %d\n", x);
+        printf("y = %d\n", y);
+
+        for(int i = 0; i < 10; i++){
+            printf("%d\n", arr[i]);
+        }
+
+        return 0;
+        }
+        "
+
+    4. The address of x ad y are given with the following printf statements
+        "printf("x address: %p\n", &x)"
+        "printf("x address: %p\n", &x)"
     
+    5. To make px point to x and py point to y's address values we write this code
+        "px = &x;
+         py = &y;
+         printf("px = %p\n", px);
+         printf("py = %p\n", py);
+         "
+         which assigns the address values of x and y to px and py and prints using the pointer variables
+
+    6. To use arr as a pointer to print the output the contents of arr we can write a for loop like this:
+        "for (int i = 0; i < 10; i++){
+            printf("%d\n", *(arr + i));
+        }
+        "
+        where the *(arr + i)" is equivilent to "arr[i]".
+    
+    7. These two print statments will show that the address of arr and arr[0] are indeed equal to one another:
+       "printf("arr = %p\n", arr);
+        printf("arr[0] = %p\n", &arr[0]);
+       "
+
+    8. The result makes sense because when printing out the address of arr we are printing out the whole address
+       for the entire arr which is different from the first element, where &arr represents the base address for the arr and
+       arr from our previous example represent the address of the first element.
+      "printf("&arr = %p\n", &arr);
+      "
