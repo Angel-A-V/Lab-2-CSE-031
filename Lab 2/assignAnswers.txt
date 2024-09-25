@@ -10,3 +10,5 @@ Individual Assignment 1: Segmentation Faults
 
     4. To fix this, modify read_values so that sum is passed by reference. This requires using a pointer in 
        read_values, and then in main, pass sum by reference.
+    
+Individual Assignment 2: Complete arrCopy.c
