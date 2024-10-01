@@ -10,3 +10,14 @@ Individual Assignment 1: Segmentation Faults
 
     4. To fix this, modify read_values so that sum is passed by reference. This requires using a pointer in 
        read_values, and then in main, pass sum by reference.
+    
+Individual Assignment 2: Complete arrCopy.c
+
+    1. No the output wasn't expected, I was expecting "HELLO!hello!" instead we have random characters at the end
+       of the print statement.
+    
+    2. The output again is not expected and it has something to do with a missing null terminator at the end of the 
+       concatenarted string , causing those garbage characters to print out as well.
+    
+    3. The output is not expected as were assume it should be able to print the whole statement we typed into terminal.
+       But while looking at the code I can see that it has to do with the fixed character values for str1 and str2 at 10 characters.
